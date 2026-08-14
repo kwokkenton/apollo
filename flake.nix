@@ -21,6 +21,7 @@
           pre-commit
           just
           bun
+          chromium
 
           # Formatters
           treefmt
@@ -33,6 +34,7 @@
         ];
 
         shellHook = ''
+          export CHROME_PATH=${pkgs.chromium}/bin/chromium
           # Install pre-commit hooks if not already installed
           if [ ! -f .git/hooks/pre-commit ]; then
             echo "Installing pre-commit hooks..."
